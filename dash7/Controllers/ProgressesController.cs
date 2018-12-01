@@ -21,8 +21,8 @@ namespace dash7.Controllers
         }
         public ActionResult TeachersIndex()
         {
-            var Something = TempData["Something "];
-            ViewBag.Idea = Something;
+
+ 
             return View(db.Progresses.ToList());
         }
 
@@ -57,13 +57,10 @@ namespace dash7.Controllers
         {
             if (ModelState.IsValid)
             {
-
+                ViewBag.MyViewBag = progress.IdeaId;
                 db.Progresses.Add(progress);
-                db.SaveChanges();
-                var Something = progress.IdeaId;
-                ViewBag.Idea = Something;
-
-                return RedirectToAction("TeachersIndex","Progresses");
+                db.SaveChanges();              
+                return RedirectToAction("TeachersIndex","Progresses",);
             }
 
             return View(progress);

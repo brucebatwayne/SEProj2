@@ -169,7 +169,7 @@
                                     int i = c1 - 1;
                                     //string s = ViewBag.getProgressBar(1);
 
-                                    foreach (var item in Model.Skip(i).Take(1))
+                                    foreach (var item in Model.Where(p => p.IdeaId))
                                     {
 
                                         string s1 = item.Bar1.ToString();
